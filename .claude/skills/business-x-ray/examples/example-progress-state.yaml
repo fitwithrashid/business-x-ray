@@ -1,0 +1,99 @@
+# Business X-Ray Progress State
+# Copy this block when resuming a session
+
+# ============================================
+# EXAMPLE: Coaching Business - Mid-Session
+# ============================================
+
+stage: process_expansion
+last_updated: 2026-01-06
+
+# Business Context
+business_type: coach
+business_name: "Online Fitness Coaching"
+price_range: "$1,500-$5,000"
+team_size: "Solo + 1 VA"
+
+# Completion Status
+business_map_complete: true
+bowtie_complete: true
+
+# Pain Points Identified (from interview)
+pain_points:
+  - content_creation  # Takes 15+ hours/week
+  - discovery_calls   # Owner doing all qualification
+  - onboarding        # Manual and inconsistent
+
+# Processes Expanded
+expanded_processes:
+  - name: content_creation
+    status: complete
+    opportunities_count: 4
+
+pending_processes:
+  - discovery_calls
+  - onboarding
+
+# Opportunities Flagged (from expanded processes)
+opportunities:
+  - process: content_creation
+    step: "Research topics"
+    category: automate
+    selected_option: "AI research assistant"
+
+  - process: content_creation
+    step: "Edit videos"
+    category: bottleneck
+    selected_option: "Delegate to VA"
+
+  - process: content_creation
+    step: "Repurpose content"
+    category: automate
+    selected_option: "AI repurposing"
+
+  - process: content_creation
+    step: "Content calendar"
+    category: digital_asset
+    selected_option: "Quick version - Notion template"
+
+# Roadmap Status
+roadmap_created: false
+
+# Files Generated
+drawio_pages:
+  - "Business Overview"
+  - "Bow-Tie Funnel"
+  - "Content Creation Swimlane"
+
+# ============================================
+# HOW TO RESUME
+# ============================================
+# 1. Start new conversation
+# 2. Say: "Continue my Business X-Ray session"
+# 3. Paste this YAML block
+# 4. (Optional) Upload the .drawio file
+
+# ============================================
+# BLANK TEMPLATE
+# ============================================
+# stage: [interview | business_map | bowtie | identify_pain | process_expansion | roadmap]
+# last_updated: YYYY-MM-DD
+#
+# business_type: [coach | course_creator | agency | saas | service_provider | creator]
+# business_name: ""
+# price_range: ""
+# team_size: ""
+#
+# business_map_complete: [true | false]
+# bowtie_complete: [true | false]
+#
+# pain_points: []
+#
+# expanded_processes: []
+# pending_processes: []
+#
+# opportunities: []
+#
+# roadmap_created: [true | false]
+#
+# drawio_pages: []
