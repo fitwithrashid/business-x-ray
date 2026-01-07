@@ -62,7 +62,7 @@ STOP. Wait for confirmation.
 
 **After confirmation:** SPAWN A SUB-AGENT to generate the diagram:
 ```
-Use the Task tool with subagent_type="general-purpose" and model="haiku":
+Use the Task tool with subagent_type="general-purpose" and model="opus":
 "Generate Business Map .drawio. Data: [paste 7 columns].
 Read references/drawio-standards.md for XML patterns.
 Save to: diagrams/[business-name]-x-ray.drawio"
@@ -93,7 +93,7 @@ STOP. Wait for choice.
 
 **After Bow-Tie confirmation (before asking about areas):** SPAWN A SUB-AGENT to add Bow-Tie to diagram:
 ```
-Use the Task tool with subagent_type="general-purpose" and model="haiku":
+Use the Task tool with subagent_type="general-purpose" and model="opus":
 "Add Bow-Tie Funnel to existing .drawio file.
 
 CRITICAL: Generate a 7-COLUMN GRID, NOT a flowchart.
@@ -133,7 +133,7 @@ STOP. Wait for response. Iterate until confirmed.
 
 **After process flow is confirmed:** SPAWN A SUB-AGENT to add Process Swimlane:
 ```
-Use the Task tool with subagent_type="general-purpose" and model="haiku":
+Use the Task tool with subagent_type="general-purpose" and model="opus":
 "Add [Process Name] swimlane page to .drawio file.
 Lanes: Owner | AI | Team | Output
 Phases: [list phases with actor assignments]
@@ -175,7 +175,7 @@ Generate the .drawio file (or XML for web users) and provide the resume YAML blo
 
 **Final diagram output:** SPAWN A SUB-AGENT to finalize and verify diagram:
 ```
-Use the Task tool with subagent_type="general-purpose" and model="haiku":
+Use the Task tool with subagent_type="general-purpose" and model="opus":
 "Finalize Business X-Ray .drawio file.
 Verify all pages are present:
 - Page 1: Business Overview (Bow-Tie + Business Map)

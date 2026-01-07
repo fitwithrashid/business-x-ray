@@ -11,7 +11,7 @@ description: Map, diagnose, and optimize business operations through progressive
 >
 > **EVERY time you need to generate or update a diagram:**
 > ```
-> Use the Task tool with subagent_type="general-purpose" and model="haiku":
+> Use the Task tool with subagent_type="general-purpose" and model="opus":
 > "Generate [diagram type] .drawio. Data: [business data].
 > Read references/drawio-standards.md for XML patterns.
 > Save to: diagrams/[business-name]-x-ray.drawio"
@@ -195,7 +195,7 @@ Orchestrator (this conversation)
 
     Task tool call:
     - subagent_type: "general-purpose"
-    - model: "haiku"  ← Token-efficient for mechanical XML generation
+    - model: "opus"  ← High-quality diagram generation
     - prompt: "Generate .drawio XML for [specific diagram]
                Data: [extracted business data]
                Template: read references/drawio-standards.md
@@ -265,7 +265,7 @@ File: diagrams/[business-name]-x-ray.drawio
 ## Cross-Platform Mode
 
 ### Claude Code CLI
-- **Use sub-agents with model="haiku"** for diagram generation (keeps orchestrator clean, saves tokens)
+- **Use sub-agents with model="opus"** for diagram generation (keeps orchestrator clean, high-quality output)
 - Save .drawio directly to `diagrams/` folder
 - Resume by reading local file
 
