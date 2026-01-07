@@ -60,6 +60,14 @@ Go through each column. Ask ONE question, wait for response, then next:
 
 STOP. Wait for confirmation.
 
+**After confirmation:** SPAWN A SUB-AGENT to generate the diagram:
+```
+Use the Task tool with subagent_type="general-purpose":
+"Generate Business Map .drawio. Data: [paste 7 columns].
+Read references/drawio-standards.md for XML patterns.
+Save to: diagrams/[business-name]-x-ray.drawio"
+```
+
 ### Step 6: Infer Bow-Tie Funnel
 From Business Map data, present the 7-stage customer journey:
 > "Based on your Business Map, here's your customer journey:
@@ -83,6 +91,15 @@ STOP. Wait for response.
 
 STOP. Wait for choice.
 
+**After Bow-Tie confirmation (before asking about areas):** SPAWN A SUB-AGENT to add Bow-Tie to diagram:
+```
+Use the Task tool with subagent_type="general-purpose":
+"Add Bow-Tie Funnel to existing .drawio file.
+Data: [7 stages - Awareness, Nurturing, Consideration, Commit, Onboarding, Launch, Results]
+Read references/drawio-standards.md for XML patterns.
+File: diagrams/[business-name]-x-ray.drawio"
+```
+
 ### Step 8: Map Selected Process (Level 1)
 Based on their choice, map the process with actor lanes (Owner | AI | Team | Output).
 
@@ -97,6 +114,16 @@ Present your inference:
 > Who owns each step? What's missing?"
 
 STOP. Wait for response. Iterate until confirmed.
+
+**After process flow is confirmed:** SPAWN A SUB-AGENT to add Process Swimlane:
+```
+Use the Task tool with subagent_type="general-purpose":
+"Add [Process Name] swimlane page to .drawio file.
+Lanes: Owner | AI | Team | Output
+Phases: [list phases with actor assignments]
+Read references/drawio-standards.md for XML patterns.
+File: diagrams/[business-name]-x-ray.drawio"
+```
 
 ### Step 9: Probe for Gaps
 If any phase seems incomplete, probe:
@@ -129,6 +156,18 @@ STOP. Wait for choice. Loop back to Step 8 if they choose A.
 
 ### Step 12: Output Diagram + Resume Block
 Generate the .drawio file (or XML for web users) and provide the resume YAML block.
+
+**Final diagram output:** SPAWN A SUB-AGENT to finalize and verify diagram:
+```
+Use the Task tool with subagent_type="general-purpose":
+"Finalize Business X-Ray .drawio file.
+Verify all pages are present:
+- Page 1: Business Overview (Bow-Tie + Business Map)
+- Page 2+: Process swimlanes with annotations
+Apply opportunity annotations (bottleneck=red, automate=orange, high-value=green, digital-asset=purple).
+Read references/drawio-standards.md for color codes.
+File: diagrams/[business-name]-x-ray.drawio"
+```
 
 ---
 

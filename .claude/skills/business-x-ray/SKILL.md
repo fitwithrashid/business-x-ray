@@ -5,6 +5,20 @@ description: Map, diagnose, and optimize business operations through progressive
 
 # Business X-Ray
 
+> **⚠️ CRITICAL: ALWAYS SPAWN SUB-AGENTS FOR DIAGRAM GENERATION**
+>
+> Diagram XML is token-heavy (2000+ tokens per page). To keep this conversation clean and focused on the interview:
+>
+> **EVERY time you need to generate or update a diagram:**
+> ```
+> Use the Task tool with subagent_type="general-purpose":
+> "Generate [diagram type] .drawio. Data: [business data].
+> Read references/drawio-standards.md for XML patterns.
+> Save to: diagrams/[business-name]-x-ray.drawio"
+> ```
+>
+> **Do NOT generate diagram XML inline in this conversation.**
+
 **Map, diagnose, and optimize business operations through progressive visual analysis.**
 
 USE WHEN user says 'business x-ray', 'map my business', 'identify bottlenecks', 'process improvement', 'visualize my business', or wants to find operational improvements.
